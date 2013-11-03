@@ -1,0 +1,20 @@
+name: DyrtCraftSB
+version: Release 1.0 - SNAPSHOT
+website: http://dyrtcraft.pl/
+authors: [BlackCreep, TheMolkaPL]
+softdepend: [DyrtCraftXP]
+prefix: DyrtCraftSB
+description: Plugin stworzony specjalnie dla DyrtCraft Network!
+
+# !!! NIE DOTYKAC !!!
+main: pl.dyrtcraft.dyrtcraftsb.DyrtCraftSB
+# !!! NIE DOTYKAC !!!
+
+commands:
+    asteroida:
+        description: Zarzadzanie systemem SkyOS 2.0
+        aliases: [as, is]
+        usage: /as pomoc
+    dcsb:
+        description: Komendy administracyjne DyrtCraftSB
+        usage: /dcsb <about|sklep>
