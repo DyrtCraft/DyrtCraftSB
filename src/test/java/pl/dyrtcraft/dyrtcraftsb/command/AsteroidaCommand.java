@@ -73,7 +73,7 @@ public class AsteroidaCommand implements CommandExecutor {
 				return erArg(p, "Podano nieprawidlowy argument");
 			}
 		}
-		if(args.length == 3) {
+		if(args.length == 2) {
 			if(args[0].equalsIgnoreCase("dodaj") || args[0].equalsIgnoreCase("add")) {
 				return addArg(p, args[1]);
 			}
@@ -97,38 +97,38 @@ public class AsteroidaCommand implements CommandExecutor {
 	}
 	
 	private boolean helpArg(Player p) {
-		p.sendMessage(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "	        Pomoc systemu SkyOS 2.0:");
+		p.sendMessage(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "	        Zarzadzanie systemem SkyOS 2.0");
 		
 		if(!p.hasPermission("dyrtcraftsb.vip")) { // Gracz
-			p.sendMessage(ChatColor.GRAY + "/as stwórz " + ChatColor.BLUE + "- Tworzy wyspe");
-			p.sendMessage(ChatColor.GRAY + "/as usun " + ChatColor.BLUE + "- Usuwa wyspe");
-			p.sendMessage(ChatColor.GRAY + "/as info " + ChatColor.BLUE + "- Pokazuje informacje o wyspie");
+			p.sendMessage(ChatColor.GRAY + "/as stwórz " + ChatColor.BLUE + "- Tworzy asteroida");
+			p.sendMessage(ChatColor.GRAY + "/as usun " + ChatColor.BLUE + "- Usuwa asteroide");
+			p.sendMessage(ChatColor.GRAY + "/as info " + ChatColor.BLUE + "- Pokazuje informacje o asteroidzie");
 			p.sendMessage(ChatColor.GRAY + "/as ustawdom " + ChatColor.BLUE + "- Ustawia punkt domu");
 			p.sendMessage(ChatColor.GRAY + "/as usundom " + ChatColor.BLUE + "- Usuwa punkt domu");
-			p.sendMessage(ChatColor.GRAY + "/as dom " + ChatColor.BLUE + "- Teleportuje na wyspe");
+			p.sendMessage(ChatColor.GRAY + "/as dom " + ChatColor.BLUE + "- Teleportuje na asteroidzie");
 			p.sendMessage(ChatColor.GRAY + "/as naprawdom " + ChatColor.BLUE + "- Naprawia punkt domu");
-			p.sendMessage(ChatColor.GRAY + "/as dodaj <nick> " + ChatColor.BLUE + "- Dodaje kolege do wyspy");
-			p.sendMessage(ChatColor.GRAY + "/as wyrzuc <nick> " + ChatColor.BLUE + "- Wyrzuca kolege z wyspy");
-			p.sendMessage(ChatColor.GRAY + "/as odwiedz <nick> " + ChatColor.BLUE + "- Odzwiedza wyspe innego gracza");
-			p.sendMessage(ChatColor.GRAY + "/as opusc " + ChatColor.BLUE + "- Opuszcza swoja wyspe");
-			p.sendMessage(ChatColor.GRAY + "/as chron " + ChatColor.BLUE + "- Zabezpiecza wyspe przed innymi graczami");
-			p.sendMessage(ChatColor.GRAY + "/as odchron " + ChatColor.BLUE + "- Odbezpiecza wyspe od innych graczy");
+			p.sendMessage(ChatColor.GRAY + "/as dodaj <nick> " + ChatColor.BLUE + "- Dodaje kolege do asteroidy");
+			p.sendMessage(ChatColor.GRAY + "/as wyrzuc <nick> " + ChatColor.BLUE + "- Wyrzuca kolege z asteroidy");
+			p.sendMessage(ChatColor.GRAY + "/as odwiedz <nick> " + ChatColor.BLUE + "- Odwiedza asteroide innego gracza");
+			p.sendMessage(ChatColor.GRAY + "/as opusc " + ChatColor.BLUE + "- Opuszcza swoja asteroide");
+			p.sendMessage(ChatColor.GRAY + "/as chron " + ChatColor.BLUE + "- Zabezpiecza asteroide przed innymi graczami");
+			p.sendMessage(ChatColor.GRAY + "/as odchron " + ChatColor.BLUE + "- Odbezpiecza asteroide od innych graczy");
 			return true;
 		} else { // VIP/sVIP
-			p.sendMessage(ChatColor.GRAY + "/as stwórz " + ChatColor.BLUE + "- Tworzy wyspe");
-			p.sendMessage(ChatColor.GRAY + "/as stwórz vip " + ChatColor.BLUE + "- Tworzy wyspe dla VIP'a");
-			p.sendMessage(ChatColor.GRAY + "/as usun " + ChatColor.BLUE + "- Usuwa wyspe");
-			p.sendMessage(ChatColor.GRAY + "/as info " + ChatColor.BLUE + "- Pokazuje informacje o wyspie");
+			p.sendMessage(ChatColor.GRAY + "/as stwórz " + ChatColor.BLUE + "- Tworzy asteroide");
+			p.sendMessage(ChatColor.GRAY + "/as stwórz vip " + ChatColor.BLUE + "- Tworzy asteroide dla VIP'a");
+			p.sendMessage(ChatColor.GRAY + "/as usun " + ChatColor.BLUE + "- Usuwa asteroide");
+			p.sendMessage(ChatColor.GRAY + "/as info " + ChatColor.BLUE + "- Pokazuje informacje o asteroidzie");
 			p.sendMessage(ChatColor.GRAY + "/as ustawdom " + ChatColor.BLUE + "- Ustawia punkt domu");
 			p.sendMessage(ChatColor.GRAY + "/as usundom " + ChatColor.BLUE + "- Usuwa punkt domu");
-			p.sendMessage(ChatColor.GRAY + "/as dom " + ChatColor.BLUE + "- Teleportuje na wyspe");
+			p.sendMessage(ChatColor.GRAY + "/as dom " + ChatColor.BLUE + "- Teleportuje na asteroidzie");
 			p.sendMessage(ChatColor.GRAY + "/as naprawdom " + ChatColor.BLUE + "- Naprawia punkt domu");
-			p.sendMessage(ChatColor.GRAY + "/as dodaj <nick> " + ChatColor.BLUE + "- Dodaje kolege do wyspy");
-			p.sendMessage(ChatColor.GRAY + "/as wyrzuc <nick> " + ChatColor.BLUE + "- Wyrzuca kolege z wyspy");
-			p.sendMessage(ChatColor.GRAY + "/as odwiedz <nick> " + ChatColor.BLUE + "- Odzwiedza wyspe innego gracza");
-			p.sendMessage(ChatColor.GRAY + "/as opusc " + ChatColor.BLUE + "- Opuszcza swoja wyspe");
-			p.sendMessage(ChatColor.GRAY + "/as chron " + ChatColor.BLUE + "- Zabezpiecza wyspe przed innymi graczami");
-			p.sendMessage(ChatColor.GRAY + "/as odchron " + ChatColor.BLUE + "- Odbezpiecza wyspe od innych graczy");
+			p.sendMessage(ChatColor.GRAY + "/as dodaj <nick> " + ChatColor.BLUE + "- Dodaje kolege do asteroidy");
+			p.sendMessage(ChatColor.GRAY + "/as wyrzuc <nick> " + ChatColor.BLUE + "- Wyrzuca kolege z asteroidy");
+			p.sendMessage(ChatColor.GRAY + "/as odwiedz <nick> " + ChatColor.BLUE + "- Odwiedza asteroide innego gracza");
+			p.sendMessage(ChatColor.GRAY + "/as opusc " + ChatColor.BLUE + "- Opuszcza swoja asteroide");
+			p.sendMessage(ChatColor.GRAY + "/as chron " + ChatColor.BLUE + "- Zabezpiecza asteroide przed innymi graczami");
+			p.sendMessage(ChatColor.GRAY + "/as odchron " + ChatColor.BLUE + "- Odbezpiecza asteroide od innych graczy");
 			return true;
 		}
 	}

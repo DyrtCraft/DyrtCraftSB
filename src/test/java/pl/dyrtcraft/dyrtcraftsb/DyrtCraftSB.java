@@ -38,7 +38,7 @@ public class DyrtCraftSB extends JavaPlugin {
 	}
 	
 	public static void buyVIP(Player player) {
-		if(XP.delXp(player, 1000, "")) {
+		if(XP.delXp(player, 1000, "Zakup rangi VIP na serwerze SkyBlock")) {
 			Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "azrank " + player.getName() + " VIP 30d");
 			Bukkit.broadcastMessage(ChatColor.BLUE + "[SkyOS 2.0] " + ChatColor.DARK_GRAY + player.getName() + " wlasnie zakupil range VIP!");
 			player.sendMessage(ChatColor.BLUE + "[SkyOS 2.0] " + ChatColor.GOLD + "Dziekujemy Ci, " + player.getName() + " za dotacje serwerowi DyrtCraft Netowrk!");
@@ -48,7 +48,7 @@ public class DyrtCraftSB extends JavaPlugin {
 	}
 	
 	public static void buySVIP(Player player) {
-		if(XP.delXp(player, 1500, "")) {
+		if(XP.delXp(player, 1500, "Zakup rangi sVIP na serwerze SkyBlock")) {
 			Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "azrank " + player.getName() + " sVIP 30d");
 			Bukkit.broadcastMessage(ChatColor.BLUE + "[SkyOS 2.0] " + ChatColor.DARK_GRAY + player.getName() + " wlasnie zakupil range sVIP!");
 			player.sendMessage(ChatColor.BLUE + "[SkyOS 2.0] " + ChatColor.GOLD + "Dziekujemy Ci, " + player.getName() + " za dotacje serwerowi DyrtCraft Netowrk!");
