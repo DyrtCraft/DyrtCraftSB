@@ -29,12 +29,12 @@ public class DyrtCraftSB extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new QuitListener(this), this);
 		
 		getServer().addRecipe(Crafting.mossy());
-	    getServer().addRecipe(Crafting.snieg());
-	    getServer().addRecipe(Crafting.lod());
-	    getServer().addRecipe(Crafting.end());
-	    getServer().addRecipe(Crafting.quartz());
-	    getServer().addRecipe(Crafting.lampa());
-	    getServer().addRecipe(Crafting.brick());
+		getServer().addRecipe(Crafting.snieg());
+		getServer().addRecipe(Crafting.lod());
+		getServer().addRecipe(Crafting.end());
+		getServer().addRecipe(Crafting.quartz());
+		getServer().addRecipe(Crafting.lampa());
+		getServer().addRecipe(Crafting.brick());
 	}
 	
 	public static void buyVIP(Player player) {
