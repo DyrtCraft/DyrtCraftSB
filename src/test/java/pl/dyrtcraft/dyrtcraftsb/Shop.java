@@ -1,5 +1,7 @@
 package pl.dyrtcraft.dyrtcraftsb;
 
+import java.util.Arrays;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -38,6 +40,7 @@ public class Shop implements Listener {
 		ItemStack i = new ItemStack(material, 1);
 		ItemMeta iMeta = i.getItemMeta();
 		iMeta.setDisplayName(ChatColor.AQUA + "" + ChatColor.BOLD + name);
+		iMeta.setLore(Arrays.asList(ChatColor.DARK_GRAY + "Cena XP: " + ChatColor.BLUE + cena));
 		i.setItemMeta(iMeta);
 		return i;
 	}

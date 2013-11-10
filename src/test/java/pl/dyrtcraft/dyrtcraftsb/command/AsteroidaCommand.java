@@ -61,10 +61,10 @@ public class AsteroidaCommand implements CommandExecutor {
 			if(args[0].equalsIgnoreCase("opusc") || args[0].equalsIgnoreCase("leave")) {
 				return leaveArg(p);
 			}
-			if(args[0].equalsIgnoreCase("chron") || args[0].equalsIgnoreCase("protect")) {
+			if(args[0].equalsIgnoreCase("zabezpiecz") || args[0].equalsIgnoreCase("protect")) {
 				return protectArg(p);
 			}
-			if(args[0].equalsIgnoreCase("odchron") || args[0].equalsIgnoreCase("unprotect")) {
+			if(args[0].equalsIgnoreCase("odbezpiecz") || args[0].equalsIgnoreCase("unprotect")) {
 				return unprotectArg(p);
 			}
 			if(args[0].equalsIgnoreCase("dodaj") || args[0].equalsIgnoreCase("add") || args[0].equalsIgnoreCase("wyrzuc") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("odwiedz") || args[0].equalsIgnoreCase("invite") || args[0].equalsIgnoreCase("tp")) {
@@ -74,6 +74,9 @@ public class AsteroidaCommand implements CommandExecutor {
 			}
 		}
 		if(args.length == 2) {
+			if(args[0].equalsIgnoreCase("stworz") || args[0].equalsIgnoreCase("stwórz") || args[0].equalsIgnoreCase("create")) {
+				return createVipArg(p);
+			}
 			if(args[0].equalsIgnoreCase("dodaj") || args[0].equalsIgnoreCase("add")) {
 				return addArg(p, args[1]);
 			}
@@ -91,7 +94,7 @@ public class AsteroidaCommand implements CommandExecutor {
 	}
 	
 	private boolean erArg(Player p, String reason) {
-		p.sendMessage(ChatColor.BLUE + "[SkyOS 2.0] " + ChatColor.RED + reason + "!");
+		p.sendMessage(DyrtCraftSB.prefix() + ChatColor.RED + reason + "!");
 		p.sendMessage(ChatColor.BLUE + "Aby uzyskac pomoc SkyOS 2.0, uzyj komendy /as pomoc");
 		return true;
 	}
@@ -111,8 +114,8 @@ public class AsteroidaCommand implements CommandExecutor {
 			p.sendMessage(ChatColor.GRAY + "/as wyrzuc <nick> " + ChatColor.BLUE + "- Wyrzuca kolege z asteroidy");
 			p.sendMessage(ChatColor.GRAY + "/as odwiedz <nick> " + ChatColor.BLUE + "- Odwiedza asteroide innego gracza");
 			p.sendMessage(ChatColor.GRAY + "/as opusc " + ChatColor.BLUE + "- Opuszcza swoja asteroide");
-			p.sendMessage(ChatColor.GRAY + "/as chron " + ChatColor.BLUE + "- Zabezpiecza asteroide przed innymi graczami");
-			p.sendMessage(ChatColor.GRAY + "/as odchron " + ChatColor.BLUE + "- Odbezpiecza asteroide od innych graczy");
+			p.sendMessage(ChatColor.GRAY + "/as zabezpiecz " + ChatColor.BLUE + "- Zabezpiecza asteroide przed innymi graczami");
+			p.sendMessage(ChatColor.GRAY + "/as odbezpiecz " + ChatColor.BLUE + "- Odbezpiecza asteroide od innych graczy");
 			return true;
 		} else { // VIP/sVIP
 			p.sendMessage(ChatColor.GRAY + "/as stwórz " + ChatColor.BLUE + "- Tworzy asteroide");
@@ -127,14 +130,21 @@ public class AsteroidaCommand implements CommandExecutor {
 			p.sendMessage(ChatColor.GRAY + "/as wyrzuc <nick> " + ChatColor.BLUE + "- Wyrzuca kolege z asteroidy");
 			p.sendMessage(ChatColor.GRAY + "/as odwiedz <nick> " + ChatColor.BLUE + "- Odwiedza asteroide innego gracza");
 			p.sendMessage(ChatColor.GRAY + "/as opusc " + ChatColor.BLUE + "- Opuszcza swoja asteroide");
-			p.sendMessage(ChatColor.GRAY + "/as chron " + ChatColor.BLUE + "- Zabezpiecza asteroide przed innymi graczami");
-			p.sendMessage(ChatColor.GRAY + "/as odchron " + ChatColor.BLUE + "- Odbezpiecza asteroide od innych graczy");
+			p.sendMessage(ChatColor.GRAY + "/as zabezpiecz " + ChatColor.BLUE + "- Zabezpiecza asteroide przed innymi graczami");
+			p.sendMessage(ChatColor.GRAY + "/as odbezpiecz " + ChatColor.BLUE + "- Odbezpiecza asteroide od innych graczy");
 			return true;
 		}
 	}
 	
 	private boolean createArg(Player p) {
 		p.chat("/" + komenda + " create");
+		p.chat("/kit Podstawowy");
+		return true;
+	}
+	
+	private boolean createVipArg(Player p) {
+		p.chat("/" + komenda + " create vip");
+		p.chat("/kit Podstawowy");
 		return true;
 	}
 	

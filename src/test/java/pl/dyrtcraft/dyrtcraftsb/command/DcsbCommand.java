@@ -38,7 +38,7 @@ public class DcsbCommand implements CommandExecutor {
 	}
 	
 	private boolean erArg(CommandSender sender, String reason) {
-		sender.sendMessage(ChatColor.BLUE + "[DyrtCraftSB] " + ChatColor.RED + "Blad! " + reason + "!");
+		sender.sendMessage(DyrtCraftSB.prefix() + ChatColor.RED + "Blad! " + reason + "!");
 		sender.sendMessage(ChatColor.RED + "Uzycie: " + plugin.getCommand("dcsb").getUsage());
 		return true;
 	}
@@ -57,7 +57,7 @@ public class DcsbCommand implements CommandExecutor {
 			return true;
 		}
 		Player player = (Player) sender;
-		player.sendMessage(ChatColor.BLUE + "[DyrtCraftSB] " + ChatColor.GRAY + "Otwieranie sklepu...");
+		player.sendMessage(DyrtCraftSB.prefix() + ChatColor.GRAY + "Otwieranie sklepu...");
 		player.openInventory(Shop.inv);
 		return true;
 	}
