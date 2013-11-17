@@ -58,6 +58,9 @@ public class AsteroidaCommand implements CommandExecutor {
 			if(args[0].equalsIgnoreCase("naprawdom") || args[0].equalsIgnoreCase("fixhome")) {
 				return fixhomeArg(p);
 			}
+			if(args[0].equalsIgnoreCase("odwiedz") || args[0].equalsIgnoreCase("invite") || args[0].equalsIgnoreCase("tp")) {
+				return erArg(p, "Podano zbyt malo argumentów");
+			}
 			if(args[0].equalsIgnoreCase("opusc") || args[0].equalsIgnoreCase("leave")) {
 				return leaveArg(p);
 			}
@@ -66,6 +69,9 @@ public class AsteroidaCommand implements CommandExecutor {
 			}
 			if(args[0].equalsIgnoreCase("odbezpiecz") || args[0].equalsIgnoreCase("unprotect")) {
 				return unprotectArg(p);
+			}
+			if(args[0].equalsIgnoreCase("wyrzuc") || args[0].equalsIgnoreCase("remove")) {
+				return removeArg(p, args[1]);
 			}
 			if(args[0].equalsIgnoreCase("dodaj") || args[0].equalsIgnoreCase("add") || args[0].equalsIgnoreCase("wyrzuc") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("odwiedz") || args[0].equalsIgnoreCase("invite") || args[0].equalsIgnoreCase("tp")) {
 				return erArg(p, "Podano zbyt malo argumentów");

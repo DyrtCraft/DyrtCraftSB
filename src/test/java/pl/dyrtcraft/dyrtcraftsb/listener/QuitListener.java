@@ -1,6 +1,6 @@
 package pl.dyrtcraft.dyrtcraftsb.listener;
 
-import org.bukkit.ChatColor;
+//import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -17,7 +17,8 @@ public class QuitListener implements Listener {
 	
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent e) {
-		e.setQuitMessage(ChatColor.DARK_RED + "<< " + ChatColor.GRAY + e.getPlayer().getName() + ChatColor.DARK_RED + " >>");
+		//e.setQuitMessage(ChatColor.DARK_RED + "<< " + ChatColor.GRAY + e.getPlayer().getName() + ChatColor.DARK_RED + " >>");
+		e.setQuitMessage(null);
 	}
 	
 }
