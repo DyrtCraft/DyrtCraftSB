@@ -57,7 +57,7 @@ public class DcsbCommand implements CommandExecutor {
 			return true;
 		}
 		Player player = (Player) sender;
-		player.sendMessage(DyrtCraftSB.prefix() + ChatColor.GRAY + "Otwieranie sklepu...");
+		player.sendMessage(DyrtCraftSB.prefix() + ChatColor.BLUE + "Otwieranie sklepu...");
 		player.openInventory(Shop.inv);
 		return true;
 	}

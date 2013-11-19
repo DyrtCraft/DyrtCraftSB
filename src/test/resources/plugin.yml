@@ -18,3 +18,15 @@ commands:
     dcsb:
         description: Komendy administracyjne DyrtCraftSB
         usage: /dcsb <about|sklep>
+    event:
+        description: Teleportuj sie na event na serwerze (jezeli dostepny)
+        aliases: [e]
+        usage: /event [false|true]
+    rangi:
+        description: Menu z zakupem rang VIP lub sVIP na serwerze
+        aliases: [ranks, vip, svip, donate]
+        usage: /rangi
+    sklep:
+        description: Teleportuj sie do sklepu
+        aliases: [shop]
+        usage: /sklep

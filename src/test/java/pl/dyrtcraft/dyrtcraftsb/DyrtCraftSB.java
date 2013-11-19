@@ -1,5 +1,7 @@
 package pl.dyrtcraft.dyrtcraftsb;
 
+import java.util.logging.Level;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -9,6 +11,9 @@ import pl.DyrtCraft.DyrtCraftXP.api.XP;
 
 import pl.dyrtcraft.dyrtcraftsb.command.AsteroidaCommand;
 import pl.dyrtcraft.dyrtcraftsb.command.DcsbCommand;
+import pl.dyrtcraft.dyrtcraftsb.command.EventCommand;
+import pl.dyrtcraft.dyrtcraftsb.command.RangiCommand;
+import pl.dyrtcraft.dyrtcraftsb.command.SklepCommand;
 import pl.dyrtcraft.dyrtcraftsb.listener.JoinListener;
 import pl.dyrtcraft.dyrtcraftsb.listener.QuitListener;
 import pl.dyrtcraft.dyrtcraftsb.listener.SwitchListener;
@@ -23,8 +28,13 @@ public class DyrtCraftSB extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		long loadTime = System.currentTimeMillis();
+		
 		getCommand("asteroida").setExecutor(new AsteroidaCommand(this));
 		getCommand("dcsb").setExecutor(new DcsbCommand(this));
+		getCommand("event").setExecutor(new EventCommand(this));
+		getCommand("rangi").setExecutor(new RangiCommand(this));
+		getCommand("sklep").setExecutor(new SklepCommand(this));
 		
 		getServer().getPluginManager().registerEvents(new Shop(this), this);
 		getServer().getPluginManager().registerEvents(new JoinListener(this), this);
@@ -38,6 +48,11 @@ public class DyrtCraftSB extends JavaPlugin {
 		getServer().addRecipe(Crafting.quartz());
 		getServer().addRecipe(Crafting.lampa());
 		getServer().addRecipe(Crafting.brick());
+		
+		Event.setEvent(false);
+		
+		long finLoadTime = System.currentTimeMillis() - loadTime;
+		getLogger().log(Level.INFO, prefix() + "Plugin DyrtCraftSB zostal pomyslnie zaladowany w " + finLoadTime + "!");
 	}
 	
 	public static String prefix() {
