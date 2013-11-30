@@ -52,7 +52,7 @@ public class DyrtCraftSB extends JavaPlugin {
 		Event.setEvent(false);
 		
 		long finLoadTime = System.currentTimeMillis() - loadTime;
-		getLogger().log(Level.INFO, prefix() + "Plugin DyrtCraftSB zostal pomyslnie zaladowany w " + finLoadTime + "!");
+		getLogger().log(Level.INFO, prefix() + "Plugin DyrtCraftSB zostal pomyslnie zaladowany w " + finLoadTime + " ms!");
 	}
 	
 	public static String prefix() {
@@ -69,20 +69,30 @@ public class DyrtCraftSB extends JavaPlugin {
 	}
 	
 	public static void buyVIP(Player player) {
-		if(XP.delXp(player, 1000, "Zakup rangi VIP na serwerze SkyBlock")) {
-			Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "azrank " + player.getName() + " VIP 30d");
-			Bukkit.broadcastMessage(prefix() + ChatColor.DARK_GRAY + player.getName() + " wlasnie zakupil range VIP!");
-			player.sendMessage(prefix() + ChatColor.GOLD + "Dziekujemy Ci, " + player.getName() + " za dotacje serwerowi DyrtCraft Network!");
+		int cost = 45000;
+		int xp = XP.getXp(player.getName());
+		
+		if(xp >= cost) {
+			if(XP.delXp(player, 45000, "Zakup rangi VIP na serwerze SkyBlock")) {
+				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "azrank " + player.getName() + " VIP 30d");
+				Bukkit.broadcastMessage(prefix() + ChatColor.DARK_GRAY + player.getName() + " wlasnie zakupil range VIP!");
+				player.sendMessage(prefix() + ChatColor.GOLD + "Dziekujemy Ci, " + player.getName() + " za dotacje serwerowi DyrtCraft Network!");
+			}
 		} else {
 			player.sendMessage(prefix() + ChatColor.RED + "Nie posiadasz wystarczajacej ilosci XP! :(");
 		}
 	}
 	
 	public static void buySVIP(Player player) {
-		if(XP.delXp(player, 1500, "Zakup rangi sVIP na serwerze SkyBlock")) {
-			Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "azrank " + player.getName() + " sVIP 30d");
-			Bukkit.broadcastMessage(prefix() + ChatColor.DARK_GRAY + player.getName() + " wlasnie zakupil range sVIP!");
-			player.sendMessage(prefix() + ChatColor.GOLD + "Dziekujemy Ci, " + player.getName() + " za dotacje serwerowi DyrtCraft Netwprk!");
+		int cost = 60000;
+		int xp = XP.getXp(player.getName());
+		
+		if(xp >= cost) {
+			if(XP.delXp(player, 60000, "Zakup rangi sVIP na serwerze SkyBlock")) {
+				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "azrank " + player.getName() + " sVIP 30d");
+				Bukkit.broadcastMessage(prefix() + ChatColor.DARK_GRAY + player.getName() + " wlasnie zakupil range sVIP!");
+				player.sendMessage(prefix() + ChatColor.GOLD + "Dziekujemy Ci, " + player.getName() + " za dotacje serwerowi DyrtCraft Netwprk!");
+			}
 		} else {
 			player.sendMessage(prefix() + ChatColor.RED + "Nie posiadasz wystarczajacej ilosci XP! :(");
 		}
