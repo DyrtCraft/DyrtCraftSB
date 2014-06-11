@@ -4,6 +4,7 @@ package pl.dyrtcraft.dyrtcraftsb.listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.potion.PotionEffectType;
 
 import pl.dyrtcraft.dyrtcraftsb.DyrtCraftSB;
 
@@ -19,6 +20,7 @@ public class QuitListener implements Listener {
 	public void onPlayerQuit(PlayerQuitEvent e) {
 		//e.setQuitMessage(ChatColor.DARK_RED + "<< " + ChatColor.GRAY + e.getPlayer().getName() + ChatColor.DARK_RED + " >>");
 		e.setQuitMessage(null);
+		e.getPlayer().removePotionEffect(PotionEffectType.JUMP);
 	}
 	
 }

@@ -1,10 +1,9 @@
-name: DyrtCraftSB
-version: Release 1.0 - SNAPSHOT
-website: http://dyrtcraft.pl/
+name: TheMolkaSB
+version: Unknown
 authors: [BlackCreep, TheMolkaPL]
-softdepend: [DyrtCraftXP]
-prefix: DyrtCraftSB
-description: Plugin stworzony specjalnie dla DyrtCraft Network!
+softdepend: [PermissionsEx]
+prefix: SkyBlock
+loadbefore: [VanishNoPacket]
 
 # !!! NIE DOTYKAC !!!
 main: pl.dyrtcraft.dyrtcraftsb.DyrtCraftSB
@@ -13,19 +12,15 @@ main: pl.dyrtcraft.dyrtcraftsb.DyrtCraftSB
 commands:
     asteroida:
         description: Zarzadzanie systemem SkyOS 2.0
-        aliases: [as, is]
-        usage: /as pomoc
+        aliases: [as, is, sb, skyblock, wyspa]
+        usage: 'Aby uzyskac pomoc uzyj: /as pomoc'
     dcsb:
         description: Komendy administracyjne DyrtCraftSB
-        usage: /dcsb <about|sklep>
+        usage: /dcsb <about>
     event:
         description: Teleportuj sie na event na serwerze (jezeli dostepny)
         aliases: [e]
         usage: /event [false|true]
-    rangi:
-        description: Menu z zakupem rang VIP lub sVIP na serwerze
-        aliases: [ranks, vip, svip, donate]
-        usage: /rangi
     sklep:
         description: Teleportuj sie do sklepu
         aliases: [shop]

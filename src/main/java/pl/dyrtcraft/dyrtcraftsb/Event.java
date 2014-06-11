@@ -1,8 +1,9 @@
 package pl.dyrtcraft.dyrtcraftsb;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-
-import pl.DyrtCraft.DyrtCraftXP.api.DyrtCraftPlugin;
+import org.bukkit.entity.Player;
 
 public class Event {
 	
@@ -19,7 +20,11 @@ public class Event {
 	public static void setEvent(boolean value, CommandSender setter) {
 		Event.event = value;
 		
-		DyrtCraftPlugin.sendMsgToOp(setter.getName() + " ustawil event na " + value, 0);
+		for(Player online : Bukkit.getOnlinePlayers()) {
+			if(online.isOp()) {
+				online.sendMessage(ChatColor.RED + "[-] " + ChatColor.YELLOW + setter.getName() + " ustawil event na " + value);
+			}
+		}
 	}
 	
 }
